@@ -18,8 +18,6 @@ def work():
             if attempt == NEXT:
                 PARENT.reportVictory(attempt)
                 logging.debug('found a word!')
-            else:
-                logging.debug('failed to create a word')
 
         else:
             NEXT = CHANGES
