@@ -1,0 +1,13 @@
+import tweepy,random
+
+
+class TweetMonkey(object):
+	def __init__(self):
+		auth = tweepy.OAuthHandler('y32tCpu68gI8Lw25QDe7mPRjV', 'BY7F3j7sPjDbazUvZP8OF3rqOxNxfstQCF3MImL6RknvcjVdjF')
+		auth.set_access_token('2271165378-liVEoG3EuuwkNFMjuA6gbkks3ydYfbo49jYQjiT', 'cUEPbF0KZCWHAjmlYzuYRUCsuVhbJb0c4CETEpMy76DZn')
+
+		self.api = tweepy.API(auth)
+		self.api.update_status(status='heya'+str(random.randint(0,100)))
+
+	def tweet(self,word):
+		self.api.update_status(status=word)
