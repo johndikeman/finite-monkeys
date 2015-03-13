@@ -12,14 +12,13 @@ def work():
 
     attempt = ''
     while(True):
+        attempt = ''
         if len(CHANGES)==0:
             for c in range(1,random.randint(0,30)):
                 attempt+=random.choice(LIST)
             if attempt == NEXT:
                 PARENT.reportVictory(attempt)
                 logging.debug('found a word!')
-            else:
-                logging.debug('failed to create a word')
 
         else:
             NEXT = CHANGES
