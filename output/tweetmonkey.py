@@ -8,7 +8,9 @@ class TweetMonkey(object):
 		auth.set_access_token('', '')
 
 		self.api = tweepy.API(auth)
-		self.api.update_status(status='heya'+str(random.randint(0,100)))
 
 	def tweet(self,word):
-		self.api.update_status(status=word)
+		try:	
+			self.api.update_status(status=word)
+		except Exception as e:
+			print e

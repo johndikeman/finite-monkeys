@@ -12,7 +12,7 @@ class MonkeyMama(object):
 	def __init__(self):
 		jim = ParserMonkey()
 		self.text = jim.getMessage().split(" ")
-		self.cursor = 0
+		self.cursor = 0.0
 		self.monkeyList = []
 		self.pam = TweetMonkey()
 
@@ -26,7 +26,7 @@ class MonkeyMama(object):
 		self.cursor+=1
 		for a in self.monkeyList:
 			a.updateWord(self.text[self.cursor])
-			pam.tweet(word+" ("+str(round(self.cursor/len(self.text)))+' percent complete)')
+			self.pam.tweet(word+" ("+str(round(self.cursor/len(self.text)))+' percent complete)')
 
 
 if __name__=='__main__':
